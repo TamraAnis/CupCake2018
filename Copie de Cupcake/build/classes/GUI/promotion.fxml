@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="475.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.PromotionController">
+   <children>
+      <Pane fx:id="P_affpromo" layoutY="-2.0" prefHeight="476.0" prefWidth="730.0">
+         <children>
+            <TextField fx:id="modid" visible="false" />
+            <JFXButton layoutX="637.0" layoutY="331.0" onAction="#supprimer" prefHeight="39.0" prefWidth="54.0" text=" ">
+               <graphic>
+                  <FontAwesomeIconView glyphName="TRASH" size="50" wrappingWidth="11.428571701049805" />
+               </graphic>
+            </JFXButton>
+            <TableView fx:id="table" layoutX="149.0" layoutY="13.0" onMouseClicked="#tab_clicked" prefHeight="195.0" prefWidth="419.0" style="-fx-background-color: transparent;">
+               <columns>
+                  <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="ref" prefWidth="136.0" text="Reference du produit" />
+                  <TableColumn fx:id="pour1" prefWidth="87.0" text="Pourcentage" />
+                  <TableColumn fx:id="duree" prefWidth="55.0" text="Duree" />
+                  <TableColumn fx:id="nbr" prefWidth="65.0" text="Quantite" />
+               </columns>
+            </TableView>
+            <JFXButton layoutX="628.0" layoutY="240.0" onAction="#valider" prefHeight="39.0" prefWidth="54.0" text=" ">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CHECK" size="50" wrappingWidth="11.428571701049805" />
+               </graphic>
+            </JFXButton>
+            <TextField fx:id="modref" layoutX="316.0" layoutY="228.0" />
+            <TextField fx:id="modpour" layoutX="316.0" layoutY="269.0" />
+            <TextField fx:id="modduree" layoutX="316.0" layoutY="312.0" />
+            <TextField fx:id="modnbr" layoutX="316.0" layoutY="360.0" />
+            <Label layoutX="135.0" layoutY="230.0" text="Reference des produits" textFill="#ff8000">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="135.0" layoutY="273.0" text="Pourcentage" textFill="#ff8000">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="135.0" layoutY="316.0" text="Duree" textFill="#ff8000">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="135.0" layoutY="364.0" text="Quantite" textFill="#ff8000">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="P_promo" layoutY="-1.0" prefHeight="475.0" prefWidth="730.0" visible="false">
+         <children>
+            <JFXButton fx:id="promo1" layoutX="328.0" layoutY="52.0" onAction="#handleButtonAction" prefHeight="66.0" prefWidth="74.0" text=" ">
+               <graphic>
+                  <FontAwesomeIconView fill="#ff8000" glyphName="PLUS" size="60" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="aff" layoutX="327.0" layoutY="269.0" onAction="#handleButtonAction" text=" " textFill="#ff8000">
+               <graphic>
+                  <FontAwesomeIconView fill="#ff8000" glyphName="TV" size="60" />
+               </graphic>
+            </JFXButton>
+            <Label layoutX="244.0" layoutY="144.0" prefHeight="31.0" prefWidth="269.0" text="pour ajouter une promotion">
+               <font>
+                  <Font name="Calibri Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="243.0" layoutY="357.0" text="pour afficher les promotions">
+               <font>
+                  <Font name="Calibri Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="P_promo1" layoutY="1.0" prefHeight="475.0" prefWidth="730.0" visible="false">
+         <children>
+            <JFXButton layoutX="274.0" layoutY="298.0" onAction="#ajouter" prefHeight="59.0" prefWidth="54.0" text="  ">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CHECK" size="30" wrappingWidth="1.0" />
+               </graphic>
+            </JFXButton>
+            <TextField fx:id="reff" layoutX="40.0" layoutY="36.0" prefHeight="31.0" prefWidth="134.0" promptText="reference" />
+            <TextField fx:id="paa" layoutX="40.0" layoutY="86.0" prefHeight="31.0" prefWidth="134.0" promptText="pourcentage" />
+            <TextField fx:id="daa" layoutX="40.0" layoutY="175.0" prefHeight="31.0" prefWidth="134.0" promptText="duree en jours" />
+            <TextField fx:id="qaa" layoutX="40.0" layoutY="260.0" prefHeight="31.0" prefWidth="134.0" promptText="quantite" />
+            <ComboBox fx:id="raa" layoutX="362.0" layoutY="86.0" prefHeight="31.0" prefWidth="115.0" />
+            <Label layoutX="219.0" layoutY="35.0" prefHeight="26.0" prefWidth="258.0" text="appuyer pour charger les produits" textFill="#ff8000">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="510.0" layoutY="89.0" mnemonicParsing="false" onAction="#cherche" prefHeight="25.0" prefWidth="31.0" text="Button" />
+            <Button layoutX="510.0" layoutY="33.0" mnemonicParsing="false" onAction="#yalla" prefHeight="31.0" prefWidth="31.0" text="Button" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

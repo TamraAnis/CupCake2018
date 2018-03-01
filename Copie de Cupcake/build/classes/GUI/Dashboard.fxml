@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import de.jensd.fx.glyphs.materialicons.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import org.controlsfx.dialog.*?>
+<?import org.controlsfx.control.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DashboardController">
+   <children>
+      <AnchorPane fx:id="body" prefHeight="400.0" prefWidth="191.0" style="-fx-background-color: #FF8000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="78.0" prefWidth="206.0" style="-fx-background-color: #FF8000;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="10.0" prefHeight="30.0" prefWidth="134.0" text="Cupcake" textFill="#010057">
+                     <font>
+                        <Font name="Berlin Sans FB" size="23.0" />
+                     </font>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="46.0" fitWidth="56.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/tumblr_mrmi5yZ8NV1so490mo1_400.gif" />
+                     </image>
+                  </ImageView>
+                  <MaterialDesignIconView fill="#010057" glyphName="VIEW_HEADLINE" layoutX="176.0" layoutY="33.0" size="20" text="" />
+                  <TextField fx:id="type" layoutX="20.0" layoutY="33.0" />
+               </children>
+            </Pane>
+            <JFXButton fx:id="acceuil" alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="14.0" layoutY="130.0" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="179.0" text="Acceuil" textFill="#010057">
+               <graphic>
+                  <FontAwesomeIconView fill="#010057" glyphName="HOME" size="20" />
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="panier" alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="14.0" layoutY="218.0" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="179.0" text="Panier" textFill="#010057">
+               <graphic>
+                  <FontAwesomeIconView fill="#010057" glyphName="OPENCART" size="18" />
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="produits" alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="14.0" layoutY="173.0" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="179.0" text="Produits" textFill="#010057">
+               <graphic>
+                  <FontAwesomeIconView fill="#010057" glyphName="TH" size="20" />
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="promo" alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="14.0" layoutY="261.0" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="179.0" text="Promotion" textFill="#010057">
+               <graphic>
+                  <FontAwesomeIconView fill="#010057" glyphName="PERCENT" size="20" />
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <TextField fx:id="user" layoutX="14.0" layoutY="66.0" visible="false" />
+            <TextField fx:id="four" layoutX="44.0" layoutY="79.0" prefHeight="31.0" prefWidth="115.0" promptText="fournisseur" visible="false" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pan" layoutX="206.0" prefHeight="400.0" prefWidth="401.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="408.0" fitWidth="426.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Img/28276052_913538292140257_986986149_o.jpg" />
+               </image>
+            </ImageView>
+            <Pane fx:id="P_affpromo" prefHeight="408.0" prefWidth="419.0">
+               <children>
+                  <TextField fx:id="modid" visible="false" />
+                  <JFXButton layoutX="328.0" layoutY="314.0" onAction="#supprimer" prefHeight="39.0" prefWidth="54.0" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="TRASH" size="50" wrappingWidth="11.428571701049805" />
+                     </graphic>
+                  </JFXButton>
+                  <TableView fx:id="table" layoutX="29.0" layoutY="14.0" onMouseClicked="#tab_clicked" prefHeight="195.0" prefWidth="376.0">
+                    <columns>
+                        <TableColumn fx:id="id" prefWidth="75.0" text="id" />
+                        <TableColumn fx:id="ref" prefWidth="75.0" text="refpr" />
+                        <TableColumn fx:id="pour1" prefWidth="75.0" text="pourcentage" />
+                      <TableColumn fx:id="duree" prefWidth="75.0" text="duree" />
+                      <TableColumn fx:id="nbr" prefWidth="75.0" text="quantite" />
+                    </columns>
+                  </TableView>
+                  <JFXButton layoutX="321.0" layoutY="240.0" onAction="#valider" prefHeight="39.0" prefWidth="54.0" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CHECK" size="50" wrappingWidth="11.428571701049805" />
+                     </graphic>
+                  </JFXButton>
+                  <TextField fx:id="modref" layoutX="44.0" layoutY="228.0" />
+                  <TextField fx:id="modpour" layoutX="44.0" layoutY="269.0" />
+                  <TextField fx:id="modduree" layoutX="44.0" layoutY="314.0" />
+                  <TextField fx:id="modnbr" layoutX="44.0" layoutY="360.0" />
+               </children></Pane>
+            <Pane fx:id="P_promo" prefHeight="400.0" prefWidth="419.0">
+               <children>
+                  <JFXButton fx:id="promo1" layoutX="65.0" layoutY="40.0" onAction="#handleButtonAction" prefHeight="66.0" prefWidth="74.0" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView fill="#ff8000" glyphName="PLUS" size="60" />
+                     </graphic></JFXButton>
+                  <JFXButton fx:id="aff" layoutX="76.0" layoutY="234.0" onAction="#handleButtonAction" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="TV" size="60" />
+                     </graphic></JFXButton>
+               </children></Pane>
+            <Pane fx:id="P_acceuil" prefHeight="400.0" prefWidth="419.0" visible="false" />
+            <Pane fx:id="P_promo1" prefHeight="400.0" prefWidth="419.0">
+               <children>
+                  <JFXButton layoutX="274.0" layoutY="329.0" onAction="#ajouter" prefHeight="25.0" prefWidth="20.0" text="  ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CHECK" size="20" wrappingWidth="1.0" />
+                     </graphic>
+                  </JFXButton>
+                  <Button layoutX="340.0" layoutY="39.0" mnemonicParsing="false" onAction="#cherche" prefHeight="25.0" prefWidth="31.0" text="Button" />
+                  <TextField fx:id="reff" layoutX="40.0" layoutY="36.0" prefHeight="31.0" prefWidth="134.0" promptText="reference" />
+                  <TextField fx:id="paa" layoutX="40.0" layoutY="86.0" prefHeight="31.0" prefWidth="134.0" promptText="pourcentage" />
+                  <TextField fx:id="daa" layoutX="40.0" layoutY="175.0" prefHeight="31.0" prefWidth="134.0" promptText="duree en jours" />
+                  <TextField fx:id="qaa" layoutX="40.0" layoutY="260.0" prefHeight="31.0" prefWidth="134.0" promptText="quantite" />
+                  <Button layoutX="340.0" layoutY="87.0" mnemonicParsing="false" onAction="#yalla" prefHeight="31.0" prefWidth="31.0" text="Button" />
+                  <ComboBox fx:id="raa" layoutX="216.0" layoutY="87.0" prefHeight="31.0" prefWidth="115.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="P_produit" prefHeight="400.0" prefWidth="400.0" />
+            <Pane fx:id="P_panier" prefHeight="400.0" prefWidth="419.0" visible="false" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

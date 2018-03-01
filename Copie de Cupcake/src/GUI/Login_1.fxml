@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(#e4ccff, #e47596);" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginController">
+   <children>
+      <AnchorPane layoutX="364.0" layoutY="40.0" prefHeight="330.0" prefWidth="293.0" style="-fx-background-color: linear-gradient(#c8a0f3, #e63569); -fx-background-radius: 50;">
+         <children>
+            <Label layoutX="113.0" layoutY="30.0" text="Sign In">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="userid" focusColor="#0d2872" layoutX="18.0" layoutY="90.0" maxWidth="251.0" minWidth="198.0" prefHeight="31.0" prefWidth="244.0" promptText="Username/Email" />
+            <JFXPasswordField fx:id="passid" layoutX="17.0" layoutY="150.0" maxWidth="244.0" minWidth="191.0" prefHeight="31.0" prefWidth="244.0" promptText="Password" />
+            <JFXCheckBox fx:id="remember" layoutX="77.0" layoutY="203.0" text="Remember me" />
+            <JFXButton fx:id="logid" layoutX="22.0" layoutY="231.0" onAction="#performLogin" prefHeight="25.0" prefWidth="244.0" ripplerFill="#0d2872" style="-fx-background-color: #e32d62;" text="Login" textFill="#e4dfdf">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <Hyperlink fx:id="mail" layoutX="91.0" layoutY="271.0" onAction="#sendmail" text="Forgot Password?" textFill="#3a1fd3" underline="true" />
+            <Label fx:id="msg" layoutX="24.0" layoutY="65.0" textFill="#cd0000">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="394.0" fitWidth="300.0" layoutX="14.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../src/log.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="signupid" layoutX="37.0" layoutY="286.0" onAction="#performSignUP" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: #e32d62;" text="Sign UP" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="37.0" layoutY="148.0" text="Welcome to CupCakes" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="197.0" prefHeight="80.0" prefWidth="234.0" text="Achetez et vendez près de chez &#10;vous ! Retrouvez facilement&#10; toutes nos annonces - 100% &#10;Gratuit !" textFill="#c6c6c6" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="exit" layoutX="657.0" onAction="#exit" text="X">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

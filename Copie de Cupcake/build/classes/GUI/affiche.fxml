@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficheController">
+   <children>
+      <AnchorPane fx:id="an" prefHeight="490.0" prefWidth="689.0" />
+      <AnchorPane layoutX="216.0" prefHeight="490.0" prefWidth="473.0">
+         <children>
+            <TableView fx:id="table" layoutX="180.0" layoutY="56.0" onMouseClicked="#tab_clicked" prefHeight="239.0" prefWidth="300.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="65.0" text="id_promo" />
+                <TableColumn fx:id="ref" prefWidth="43.0" text="refpr" />
+                  <TableColumn fx:id="pour" prefWidth="84.0" text="pourcentage" />
+                  <TableColumn fx:id="duree" prefWidth="50.0" text="duree" />
+                  <TableColumn fx:id="nbr" prefWidth="56.0" text="quantite" />
+              </columns>
+            </TableView>
+            <Button fx:id="retour" mnemonicParsing="false" onAction="#retour" text="retour" />
+            <Button fx:id="valider" layoutX="428.0" layoutY="346.0" mnemonicParsing="false" onAction="#valider" text="valider" />
+            <Label text="refpr" />
+            <Label layoutX="296.0" layoutY="299.0" text="pourcentage" />
+            <Label layoutX="94.0" layoutY="16.0" text="duree en jours" />
+            <Label layoutX="124.0" layoutY="24.0" text="quantite" />
+            <TextField fx:id="ref1" layoutX="52.0" layoutY="182.0" />
+            <TextField fx:id="pour1" layoutX="210.0" layoutY="32.0" />
+            <TextField fx:id="duree1" layoutX="39.0" layoutY="295.0" />
+            <TextField fx:id="nbr1" layoutX="39.0" layoutY="44.0" />
+            <Label layoutX="41.0" layoutY="76.0" text="l'id de la promotion" />
+            <TextField fx:id="id1" editable="false" layoutX="93.0" layoutY="151.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
